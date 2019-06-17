@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>講演会予約内容確認</title>
+    <base target="_top">
+    <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1><span class="inline-block"><?=lecturer?></span><span class="inline-block">講演会予約確認</span></h1>
+        <hr />
+        <table class="h3">
+　  　　　  <tr>
+　　  　　    <th>項目名</th>
+　　　  　    <th>値</th>
+　　　　    </tr>
+　　　　    <tr>
+  　　　　    <td>予約ID</td>
+ 　  　　　   <td><?=id?></td>
+ 　　  　　 </tr>
+ 　　　  　 <tr>
+   　　　  　 <td>受付時刻</td>
+　　　　      <td><?=timestamp?></td>
+  　　　　  </tr>
+　　　　    <tr>
+ 　　　　     <td>メールアドレス</td>
+  　　　　    <td><?=email?></td>
+　  　　　  </tr>
+　  　　　  <tr>
+　　  　　    <td>お名前</td>
+　　　  　    <td><?=name?></td>
+　　　　    </tr>
+　　  　　  <tr>
+　　　  　    <td>人数</td>
+　　　　      <td><?=count?></td>
+　　　　    </tr>
+　　  　　</table>
+      <img class="col-12 mt2" src="http://drive.google.com/uc?export=download&id=1QyeV5GjX7uerQ5GAMNXi7K7pl9mU3_HW" width="1198" height="859" />
+      <div class="flex flex-wrap justify-around mt2">
+        <a class="h1" href="https://docs.google.com/forms/d/e/1FAIpQLScGTNagz2k3HfWP7-JCOOqLpwgkEEFalunnCYI0GzZXkfYlAA/viewform" >変更</a>
+        <a class="h1 warn" href="https://docs.google.com/forms/d/e/1FAIpQLSfP-TTiKjeb4Bk6WrycONVV3_pJg3TsG5jVMGR_e9wnafKb_A/viewform" >削除</a>
+      </div>
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>講演会予約内容確認</title>
+    <base target="_top">
+    <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>予約ID照会</h1>
+        <form action="<?=url?>" method="get" class="flex flex-wrap justify-around mx-auto items-center">
+            <input type="text" id="id" name="id">
+            <button class="h1" type="submit">ID確認</button>
+        </form>
+      </article>
+    </main>
+  </body>
+</html>
