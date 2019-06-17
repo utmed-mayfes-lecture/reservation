@@ -40,7 +40,7 @@ deleteのフォルダーにあります。Google Formを作成し
 削除する予約IDを抽出した後libraryに渡します。
 
 # [共通ライブラリ](https://github.com/utmed-mayfes-lecture/reservation/tree/master/library)
-Google Driveにスクリプト単体で置いてください。またWebアプリケーションとして公開してください。
+Google Driveにスクリプト単体で置いてください。またWebアプリケーションとして公開してください。フォーム類ではリソース>ライブラリでsenderという名前でライブラリ登録してください。
 ## [sender.gs](https://github.com/utmed-mayfes-lecture/reservation/blob/master/library/sender.gs)
 メール送信スクリプトと、予約ID照合の実装がなされています。メールの文面を4人の先生である程度共通させたかったために一か所に情報を集めました。
 ### var lectures
