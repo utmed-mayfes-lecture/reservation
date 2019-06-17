@@ -1,4 +1,4 @@
-# 予約Form
+# [予約Form](https://github.com/utmed-mayfes-lecture/reservation/tree/master/lecturer)
 lecturerのフォルダーにあります。Google Formを作成し、メールアドレスの収集にチェックを入れ、
 
 - お名前
@@ -6,7 +6,7 @@ lecturerのフォルダーにあります。Google Formを作成し、メール�
 
 という名前の質問を用意してください。
 トリガーはフォーム送信時で`onSubmitForm`を使用してください
-## mailer.gs
+## [mailer.gs](https://github.com/utmed-mayfes-lecture/reservation/blob/master/lecturer/mailer.gs)
 〇〇先生予約フォームで使用されているものです。フォーム送信時に起動するようトリガーが設定されています。
 ### var lectureid
 変数lectureidは後述のlecturesの何番目の要素に対応するGoogle Formかを示しています。
@@ -15,7 +15,7 @@ lecturerのフォルダーにあります。Google Formを作成し、メール�
 フォームが重複実行された際に、LockServiceでタイムスタンプが重複することを防いでいます。
 ### function sendReceipt(e,lectureid)
 必要な質問のデータを抽出しています。講義idと質問のデータとをlibraryに渡しています。
-# 変更Form
+# [変更Form](https://github.com/utmed-mayfes-lecture/reservation/tree/master/modify)
 modifyのフォルダーにあります。Google Formを作成し
 
 - 予約ID
@@ -25,23 +25,23 @@ modifyのフォルダーにあります。Google Formを作成し
 
 という名前の質問を用意してください。
 トリガーはフォーム送信時で`onSubmitForm`を使用してください
-## confirm.gs
+## [confirm.gs](https://github.com/utmed-mayfes-lecture/reservation/blob/master/modify/confirm.gs)
 ### function sendConfirm(e)
 変更、削除する予約IDを抽出した後、他の回答も抽出しlibraryに渡します。
-# 削除Form
+# [削除Form](https://github.com/utmed-mayfes-lecture/reservation/tree/master/delete)
 deleteのフォルダーにあります。Google Formを作成し
 
 - 予約ID
 
 という名前の質問を用意してください。
 トリガーはフォーム送信時で`onSubmitForm`を使用してください
-## confirm.gs
+## [confirm.gs](https://github.com/utmed-mayfes-lecture/reservation/blob/master/delete/confirm.gs)
 ### function sendConfirm(e)
 削除する予約IDを抽出した後libraryに渡します。
 
-# 共通ライブラリ
-Google Driveにスクリプト単体で置いてください。
-## sender.gs
+# [共通ライブラリ](https://github.com/utmed-mayfes-lecture/reservation/tree/master/library)
+Google Driveにスクリプト単体で置いてください。またWebアプリケーションとして公開してください。
+## [sender.gs](https://github.com/utmed-mayfes-lecture/reservation/blob/master/library/sender.gs)
 メール送信スクリプトと、予約ID照合の実装がなされています。メールの文面を4人の先生である程度共通させたかったために一か所に情報を集めました。
 ### var lectures
 
@@ -101,8 +101,8 @@ https://docs.google.com/spreadsheets/d/[ID] /edit
 ----|----
 | customer | 予約者情報 |
 | lecture | lectures[(講演id)] |
-戻り値は8桁の16進数をテキスト化したものです。
 
+戻り値は8桁の16進数をテキスト化したものです。
 ### function isValidSignature(signature)
 対応するレコードを電子署名から検索し照合しています。
 
@@ -173,7 +173,7 @@ https://docs.google.com/spreadsheets/d/[ID] /edit
 対応するシートを探し出し、レコードを生成し、最終行の一つ下に書き込んでいます。
 対応するレコードを電子署名から検索し、照合、変更、削除を行っています。変更に関しては、newiddataで空のフィールドは無視し、空でないものだけ変更する実装になっています。
 
-## verifier.gs
+## [verifier.gs](https://github.com/utmed-mayfes-lecture/reservation/blob/master/library/verifier.gs)
 ここでdoGet関数を定義し、URLパラメーターに?id=(8桁の16進数)が来たときは、照合し、パラメーターが何もなかったときは予約照合画面が出るようにしています。
 ### var thisurl
 Webアプリケーションとして公開した際の割り当てアドレスです。
